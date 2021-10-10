@@ -1,0 +1,20 @@
+{
+  "name": "randomly",
+  "version": "0.9.0",
+  "description": "Optionally deterministic random number utilities for games or other practical randomization needs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "random"
+  ],
+  "author": "joncuster@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "seedrandom": "^3.0.5"
+  },
+  "devDependencies": {
+    "jest": "^27.2.5"
+  }
+}
