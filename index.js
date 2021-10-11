@@ -1,5 +1,5 @@
 
-const RNG = require('./components/RNG');
+const RNG = require('./components/rng');
 const Die = require('./components/die');
 const DicePool = require('./components/dicePool');
 const Deck = require('./components/deck');

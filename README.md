@@ -9,7 +9,7 @@ Deterministic behavior is often useful in these settings, not only for testing b
 RNG is the core module. Initialize with:
 
 ```
-import { RNG } from 'randomly';
+import { RNG } from 'random-ly';
 
 const rng = new RNG(seed);
 rng.random(); // seedrandom rng
