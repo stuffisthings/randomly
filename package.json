@@ -1,6 +1,6 @@
 {
   "name": "@joncuster/randomly",
-  "version": "0.9.0",
+  "version": "0.9.1",
   "description": "Optionally deterministic random number utilities for games or other practical randomization needs",
   "main": "index.js",
   "scripts": {
