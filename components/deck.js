@@ -23,7 +23,7 @@ const RNG = require('./rng');
      * @param {number} max - the highest position the item should appear. 0 adds to bottom of the deck.
      */
     shuffleInItem(item, max) {
-        const index = this.RNG.getNumberBetween(0, max || this.items.length);
+        const index = this.RNG.getIntBetween(0, max || this.items.length);
         this.items.splice(index, 0, item);
     }
     /**
