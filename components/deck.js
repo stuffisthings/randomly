@@ -7,7 +7,7 @@ const RNG = require('./rng');
     constructor(options = {}) {
         const { items, shuffle, rng } = options;
         this.RNG = rng || new RNG();
-        this.items = [...items] || [];
+        this.items = items ? [...items] : [];
         if (shuffle !== false) this.items = this.RNG.shuffle(items);
     }
     /**
