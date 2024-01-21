@@ -31,6 +31,19 @@ Shuffle an array (non destructive, returns the shuffled array):
 rng.shuffle(['dog','cat','moose']);
 ```
 
+Get a random item with a weighted distribution where each item is an object with a property representing its weight (defaults to `weight`).
+
+```
+rng.pickFromWeighted([{ animal: 'dog', weight: 10 }, { animal: 'cat', weight: 10 }, { animal: 'ferret', weight: 1 } ]);
+rng.pickFromWeighted([{ animal: 'dog', chance: 10 }, { animal: 'cat', chance: 10 }, { animal: 'ferret', chance: 1 } ], 'chance');
+```
+
+You can also pass a function as the second argument that takes the item and returns a weight, in this case items need not be objects.
+
+```
+rng.pickFromWeighted(['dog','moose','capybara'], (item) => item.length);
+```
+
 ## Die
 
 Simulates an n-sided die.

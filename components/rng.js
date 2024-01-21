@@ -20,14 +20,24 @@ module.exports = class RNG {
   }
   /**
    * Return a random single item based on different probabilities
-   * @param {*{}} array of objects like  [ { chance: 5, item: 'Foo' } ]
-   * @returns {*} a randomly chosen item with probability based on chance
+   * @param {*object[]|*[]} array of objects like  [ { weight: 5, item: 'Foo' } ], or any type if using a weight function
+   * @param {string|function} weightProp - property to get the weight from, or a function that takes the item and returns a weight
+   * @returns {*} a randomly chosen item with probability based on weight
    */
-  pickFromWithChance(array) {
+  pickFromWeighted(array, weightProp = 'weight') {
     const flat = [];
     array.forEach((item) => {
-      for (let i = 0; i < item.chance; i += 1) {
-        flat.push(item.value);
+      let weight =
+        typeof weightProp === 'function'
+          ? weightProp(item)
+          : item[weightProp] || 1;
+      parseInt(weight);
+      if (weight < 1 || Number.isNaN(weight)) {
+        console.log('Invalid weight', weight, 'defaulting to 1');
+        weight = 1;
+      }
+      for (let i = 0; i < weight; i += 1) {
+        flat.push(item);
       }
     });
     return this.pickFrom(flat);
